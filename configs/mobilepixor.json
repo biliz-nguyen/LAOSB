@@ -1,0 +1,70 @@
+{
+    "device": "cuda",
+    "multi_gpu": false,
+    "experiments": "experiments/mobilepixor",
+    "note": "baseline",
+    "prefetch_factor": 2,
+    "num_workers": 4,
+    "pin_memory": true,
+    "data": {
+        "num_classes": 1,
+        "out_size_factor": 4,
+        "gaussian_overlap": 0.1,
+        "min_radius": 4,
+        "kitti": {
+            "location": "data/kitti",
+            "geometry": {
+                "x_min": -15.0,
+                "x_max": 15.0,
+                "y_min": -15.0,
+                "y_max": 15.0,
+                "z_min": -2.0,
+                "z_max": 1.5,
+                "x_res": 0.05,
+                "y_res": 0.05,
+                "z_res": 0.1
+            },
+            "objects": {
+                "Car": 0
+            }
+        }
+    },
+    "model": {
+        "backbone": "mobilepixor",
+        "backbone_out_dim": 16,
+        "cls_encoding": "gaussian"
+    },
+    "train": {
+        "data_type": "voxel",
+        "batch_size": 4,
+        "learning_rate": 0.0003,
+        "epochs": 30,
+        "weight_decay": 0.0005,
+        "lr_decay_at": [15, 25],
+        "save_every": 5,
+        "data": "data/list/train.txt"
+    },
+    "val": {
+        "batch_size": 4,
+        "data": "data/list/val.txt",
+        "val_every": 1
+    },
+    "augmentation": {
+        "p": 0.5,
+        "rotation": {
+            "use": true,
+            "limit_angle": 20,
+            "p": 1.0
+        },
+        "scaling": {
+            "use": true,
+            "range": [0.95, 1.05],
+            "p": 1.0
+        },
+        "translation": {
+            "use": true,
+            "scale": 0.4,
+            "p": 1.0
+        }
+    }
+}
