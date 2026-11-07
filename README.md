@@ -4,6 +4,26 @@ An efficient, modular PyTorch implementation of anchor-free 3D object detection 
 
 ---
 
+## 📄 Associated Research Publication
+
+**Lightweight 3D LiDAR Rubber Tree Detection with Knowledge Distillation and Efficient Attention**
+
+*Engineering Research Express* — IOP Publishing
+
+**Paper:** [Read on IOPscience](https://iopscience.iop.org/article/10.1088/2631-8695/aebd41)
+
+**DOI:** [10.1088/2631-8695/aebd41](https://doi.org/10.1088/2631-8695/aebd41)
+
+### Research Overview
+
+This research investigates lightweight 3D LiDAR object detection for rubber tree perception, focusing on efficient attention mechanisms and knowledge distillation.
+
+The repository provides a modular PyTorch framework for Bird's-Eye-View (BEV) object detection, including MobilePIXOR, PIXOR, PointPillars, and RPN backbones.
+
+### Citation
+
+If you use this repository in your research, please cite the associated publication using the official bibliographic information available on IOPscience.
+
 ## 🌟 Key Highlights
 
 - **Voxel-based BEV Representation**: Fast occupancy voxelization transforming raw irregular 3D LiDAR point clouds into a structured 2.5D BEV tensor, eliminating expensive 3D convolutions.
